@@ -265,8 +265,7 @@
 
 
 	function makeTimer() {
-
-		var endTime = new Date("2023/05/01 00:00:00");
+		var endTime = new Date('2023/05/01 00:00:00');
 		endTime = (Date.parse(endTime) / 1000);
 
 		var now = new Date();
@@ -294,36 +293,45 @@
 	// 	center: [104.380921,30.945335],
 	// 	zoom: 14
 	// });
-	var map = new AMap.Map('allmap',{
-		zoom:10,
-		center:[104.380921,30.945335]
+	var map = new AMap.Map('allmap', {
+		zoom: 10,
+		center: [104.380921, 30.945335]
 	});
-	
-	map.setDefaultCursor('pointer');
-	
-	var marker = new AMap.Marker({
-		icon:'https://a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-default.png',
-		position:[104.380921,30.945335]
-	})
-	
-	// map.on('click',function(e){
-		// map.remove([marker])
-		// console.log('e.lnglat.lat: ', e.lnglat.lat);
-		// 	console.log('e.lnglat.lng,: ', e.lnglat.lng);
-		marker = new AMap.Marker({
-			// icon:'https://a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-default.png',
-			position:[104.380921,30.945335],
-			
-		});
-		// let marker2 = new AMap.Marker({
-		// 	// icon:'https://a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-default.png',
-		// 	position:[104.376689,30.938852],
-			
-		// });
-		
-		map.add([marker]);
-	// })
 
+	map.setDefaultCursor('pointer');
+
+	var marker = new AMap.Marker({
+		icon: 'https://a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-default.png',
+		position: [104.380921, 30.945335]
+	})
+
+	marker = new AMap.Marker({
+		position: [104.380921, 30.945335],
+	});
+
+
+	map.add([marker]);
+
+	let isPlay = false
+	let playMusic = () => {
+		if (isPlay) return
+		console.log('isPlay: ', isPlay);
+		const musicEle = document.getElementById('music')
+		console.log('musicEle: ', musicEle);
+		musicEle.play()
+	}
+	let body = document.body
+	body.addEventListener('click', function() {
+		body.style.overflow = 'auto'
+	})
+	let mengCeng = document.getElementById('meng-ceng')
+	mengCeng.focus()
+	mengCeng.addEventListener('click', function() {
+		mengCeng.style.display = 'none'
+		playMusic()
+	})
+
+	// document.body.addEventListener('click', playMusic)
 
 	setInterval(function() { makeTimer(); }, 1000);
 
