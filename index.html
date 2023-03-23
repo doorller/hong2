@@ -22,7 +22,19 @@
   <div id="meng-ceng" style="position: fixed;height: 100vh;width: 100vw;background-color: #ffffffda;z-index: 1;">
     
   </div>
+  <audio id="music" style="display:none;" controls>
+    <source src="./luzhouyue.mp3" type="audio/mpeg">
+    您的浏览器不支持 audio 元素。
+  </audio>
   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target" id="ftco-navbar">
+    <div id="music-icon" style="position: absolute;right:50px;top:50px;width: 50px;height: 50px;background: rgb(249 248 248 / 16%);">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" class="bi bi-music-note" viewBox="0 0 16 16">
+        <path d="M9 13c0 1.105-1.12 2-2.5 2S4 14.105 4 13s1.12-2 2.5-2 2.5.895 2.5 2z"/>
+        <path fill-rule="evenodd" d="M9 3v10H8V3h1z"/>
+        <path d="M8 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 13 2.22V4L8 5V2.82z"/>
+      </svg>
+      <div id="dis-music" style="display:none;position:absolute;top:0;left:27px;transform: rotate(-33deg);width:2px;height: 100%;background-color: #e72214;"></div>
+    </div>
    <div class="container">
      <a class="navbar-brand" href="index.html">顶部</a>
      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,10 +52,7 @@
          <li class="nav-item"><a href="#rsvp-section" class="nav-link"><span>RSVP</span></a></li>
          <li class="nav-item"><a href="#gallery-section" class="nav-link"><span>画廊</span></a></li>
        </ul>
-       <audio id="music" style="display:none;" controls>
-        <source src="http://m10.music.126.net/20230323140533/3e133092a7c9815cc892f6b86fcd027a/ymusic/ccee/ab4f/896e/b5a7d7db651815b7b27362af21ec6495.mp3" type="audio/mpeg">
-      您的浏览器不支持 audio 元素。
-      </audio>
+       
      </div>
    </div>
  </nav>

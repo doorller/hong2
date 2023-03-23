@@ -312,14 +312,26 @@
 
 	map.add([marker]);
 
-	let isPlay = false
+	let isPlay = true
+	const musicEle = document.getElementById('music')
+
 	let playMusic = () => {
-		if (isPlay) return
-		console.log('isPlay: ', isPlay);
-		const musicEle = document.getElementById('music')
-		console.log('musicEle: ', musicEle);
-		musicEle.play()
+		// if (isPlay) return
+		// console.log('isPlay: ', isPlay);
+		// console.log('musicEle: ', musicEle);
+		if(isPlay)musicEle.play()
 	}
+	$('#music-icon').on('click', function() {
+		// if(isPlay) {
+			// $('#music-icon').removeClass('rotate')
+			// $('#music-icon').addClass('rotate-pause')
+			// $('#music').get(0).pause()
+			isPlay = !isPlay
+			let disMusicIcon = document.getElementById('dis-music')
+			isPlay?musicEle.play():musicEle.pause()
+			disMusicIcon.style.display = isPlay?'none':'block'
+		// }
+	})
 	let body = document.body
 	body.addEventListener('click', function() {
 		body.style.overflow = 'auto'
